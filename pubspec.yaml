@@ -65,6 +65,9 @@ flutter:
     - assets/bottom_right.png
     - assets/Logo.png
     - assets/top_left.png
+    - assets/apple.png
+    - assets/twitter.png
+    - assets/fbook.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
