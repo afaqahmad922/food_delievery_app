@@ -1,8 +1,7 @@
+import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'onBoarding_widgets.dart';
 
 class introPage_4 extends StatelessWidget {
   const introPage_4({super.key});

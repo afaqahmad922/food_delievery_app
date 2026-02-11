@@ -1,7 +1,6 @@
-import 'package:figma_to_flutter_2/On_Boarding/onBoarding_widgets.dart';
 import 'package:figma_to_flutter_2/logins/Forgot_Password.dart';
+import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:figma_to_flutter_2/logins/signUp.dart';
-import 'package:figma_to_flutter_2/logins/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';

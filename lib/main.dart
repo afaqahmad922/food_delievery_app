@@ -1,7 +1,4 @@
 import 'package:figma_to_flutter_2/SplashScreen/splashScreen.dart';
-import 'package:figma_to_flutter_2/logins/Forgot_Password.dart';
-import 'package:figma_to_flutter_2/logins/signUp.dart';
-import 'package:figma_to_flutter_2/logins/singIn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,6 +1,5 @@
-import 'package:figma_to_flutter_2/On_Boarding/onBoarding_widgets.dart';
-import 'package:figma_to_flutter_2/logins/signUp.dart';
-import 'package:figma_to_flutter_2/logins/widgets.dart';
+import 'package:figma_to_flutter_2/logins/Verification.dart';
+import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -119,7 +118,11 @@ class _forgotPasswordState extends State<forgotPassword> {
                               top: 30.h,
                               bottom: 377.h,
                             ),
-                            child: SignButton(text: 'LOG IN'),
+                            child: GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>verification()));
+                              },
+                                child: SignButton(text: 'Send Code')),
                           ),
                         ],
                       ),

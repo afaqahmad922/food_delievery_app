@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:figma_to_flutter_2/On_Boarding/onBoarding.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class SplashScreen extends StatefulWidget {

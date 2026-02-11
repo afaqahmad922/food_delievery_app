@@ -1,14 +1,14 @@
+
 import 'package:figma_to_flutter_2/On_Boarding/introPage_1.dart';
 import 'package:figma_to_flutter_2/On_Boarding/introPage_2.dart';
 import 'package:figma_to_flutter_2/On_Boarding/introPage_3.dart';
 import 'package:figma_to_flutter_2/On_Boarding/introPage_4.dart';
-import 'package:figma_to_flutter_2/On_Boarding/onBoarding_widgets.dart';
+import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:figma_to_flutter_2/logins/singIn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class onBoarding extends StatefulWidget {
   const onBoarding({super.key});

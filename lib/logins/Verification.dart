@@ -1,18 +1,17 @@
+import 'package:figma_to_flutter_2/logins/Location_Access.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class signUp extends StatefulWidget {
-  const signUp({super.key});
+class verification extends StatefulWidget {
+  const verification({super.key});
 
   @override
-  State<signUp> createState() => _signInState();
+  State<verification> createState() => _verificationState();
 }
 
-class _signInState extends State<signUp> {
-  bool isChecked = false;
-
+class _verificationState extends State<verification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,12 +55,11 @@ class _signInState extends State<signUp> {
                 ),
               ],
             ),
-
             Padding(
-              padding: EdgeInsets.only(top: 0.h),
+              padding: EdgeInsets.only(top: 5.h),
               child: Center(
                 child: AppText(
-                  text: 'Sign UP',
+                  text: 'Verification',
                   font: GoogleFonts.sen,
                   fontWeight: FontWeight.w700,
                   fontSize: 30.sp,
@@ -73,12 +71,21 @@ class _signInState extends State<signUp> {
               child: Padding(
                 padding: EdgeInsets.only(top: 3.h),
                 child: AppText(
-                  text: 'Please sign up to get started',
+                  text: 'We have sent a code to your email',
                   font: GoogleFonts.sen,
                   fontWeight: FontWeight.w400,
                   fontSize: 16.sp,
                   color: Color(0xffffffff),
                 ),
+              ),
+            ),
+            Center(
+              child: AppText(
+                text: 'example@gmail.com',
+                font: GoogleFonts.sen,
+                fontWeight: FontWeight.w700,
+                fontSize: 16.sp,
+                color: Color(0xffffffff),
               ),
             ),
             Padding(
@@ -101,67 +108,45 @@ class _signInState extends State<signUp> {
                         padding: EdgeInsets.only(
                           top: 24.h,
                           left: 24.w,
-                          right: 308.w,
+                          right: 24.w,
                         ),
-                        child: AppText(
-                          text: 'Name',
-                          font: GoogleFonts.sen,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 13.sp,
-                          color: Color(0xff32343E),
+                        child: Row(
+                          children: [
+                            AppText(
+                              text: 'Email',
+                              font: GoogleFonts.sen,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 13.sp,
+                              color: Color(0xff32343E),
+                            ),
+                            Spacer(),
+                            AppText(
+                              text: 'Resend in.50sec',
+                              font: GoogleFonts.sen,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 13.sp,
+                              color: Color(0xff32343E),
+                            ),
+                          ],
                         ),
-                      ),
-                      AppSearchField(hintText: 'John Doe'),
-                      Padding(
-                        padding: EdgeInsets.only(top: 24.h, left: 24.w),
-                        child: AppText(
-                          text: 'Email',
-                          font: GoogleFonts.sen,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 13.sp,
-                          color: Color(0xff32343E),
-                        ),
-                      ),
-                      AppSearchField(
-                        hintText: 'example@gmail.com',
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 24.h, left: 24.w),
-                        child: AppText(
-                          text: 'Password',
-                          font: GoogleFonts.sen,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 13.sp,
-                          color: Color(0xff32343E),
-                        ),
-                      ),
-                      AppSearchField(
-                        hintText: '* * * * * * * * *',
-                        suffixIcon: Icons.remove_red_eye_outlined,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 24.h, left: 24.w),
-                        child: AppText(
-                          text: 'Retype Password',
-                          font: GoogleFonts.sen,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 13.sp,
-                          color: Color(0xff32343E),
-                        ),
-                      ),
-                      AppSearchField(
-                        hintText: '* * * * * * * * *',
-                        suffixIcon: Icons.remove_red_eye_outlined,
+                        padding: EdgeInsets.only(left: 24.w, top: 8.5.h, right: 24.w),
+                        child: OtpFields(),
                       ),
 
                       Padding(
                         padding: EdgeInsets.only(
                           left: 24.w,
                           right: 24.w,
-                          top: 29.h,
-                          bottom: 30.h,
+                          top: 30.h,
+                          bottom: 377.h,
                         ),
-                        child: SignButton(text: 'LOG IN'),
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>location_access()));
+                          },
+                            child: SignButton(text: 'Verify')),
                       ),
                     ],
                   ),
