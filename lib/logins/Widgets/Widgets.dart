@@ -206,3 +206,53 @@ class NextButtonContainer extends StatelessWidget {
     );
   }
 }
+
+
+class CategoryButton extends StatelessWidget {
+  final Color backgroundColor;
+  final String text;
+
+  const CategoryButton ({
+    super.key,
+    required this.backgroundColor,
+    required this.text,
+});
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(39.r),
+        color: backgroundColor,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.12),
+            blurRadius: 8,
+            spreadRadius: 1,
+            offset: const Offset(0, 4),
+          )
+        ],
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 8.h, left: 8.w, bottom: 8.h),
+            child: Container(
+              height: 44.h,
+              width: 44.w,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(39.r),
+                color: Color(0xff98A8B9),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 12.w, right: 21.w, top: 21.h, bottom: 22.h),
+            child: Center(child: AppText(text: text, font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 14.sp, color: Color(0xff32343E))),
+          ),
+        ],
+      ),
+    );
+  }
+}
