@@ -6,11 +6,13 @@ import 'package:google_fonts/google_fonts.dart';
 class AppSearchField extends StatelessWidget {
   final String hintText;
   final IconData? suffixIcon;
+  final Color color;
 
   const AppSearchField({
     super.key,
     required this.hintText,
     this.suffixIcon,
+    required this.color,
   });
 
   @override
@@ -25,7 +27,7 @@ class AppSearchField extends StatelessWidget {
             fontWeight: FontWeight.w400,
             color: const Color(0xffA0A5BA),
           ),
-            fillColor: Color(0xffF0F5FA),
+            fillColor: color,
             filled: true,
             contentPadding: EdgeInsets.only(left: 19.w, top: 23.h, bottom: 22.h),
             suffixIcon: suffixIcon != null
@@ -253,6 +255,105 @@ class CategoryButton extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+
+class RestaurantCard extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String rating;
+  final String deliveryText;
+  final String time;
+
+  const RestaurantCard({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.rating,
+    required this.deliveryText,
+    required this.time,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          height: 137.h,
+          decoration: BoxDecoration(
+            color: const Color(0xff98A8B8),
+            borderRadius: BorderRadius.circular(15.r),
+          ),
+        ),
+
+        SizedBox(height: 8.h),
+
+        Text(
+          title,
+          style: GoogleFonts.sen(
+            fontWeight: FontWeight.w400,
+            fontSize: 20.sp,
+            color: Colors.black,
+          ),
+        ),
+
+        SizedBox(height: 5.h),
+
+        Text(
+          subtitle,
+          style: GoogleFonts.sen(
+            fontWeight: FontWeight.w400,
+            fontSize: 14.sp,
+            color: const Color(0xffA0A5BA),
+          ),
+        ),
+
+        SizedBox(height: 16.h),
+
+        Row(
+          children: [
+            const Icon(Icons.star_border, color: Color(0xffFF7622)),
+            SizedBox(width: 5.w),
+            Text(
+              rating,
+              style: GoogleFonts.sen(
+                fontWeight: FontWeight.w700,
+                fontSize: 16.sp,
+                color: Colors.black,
+              ),
+            ),
+
+            SizedBox(width: 24.w),
+
+            const Icon(Icons.fire_truck_outlined, color: Color(0xffFF7622)),
+            SizedBox(width: 5.w),
+            Text(
+              deliveryText,
+              style: GoogleFonts.sen(
+                fontWeight: FontWeight.w700,
+                fontSize: 16.sp,
+                color: Colors.black,
+              ),
+            ),
+
+            SizedBox(width: 24.w),
+
+            const Icon(Icons.watch_later_outlined, color: Color(0xffFF7622)),
+            SizedBox(width: 5.w),
+            Text(
+              time,
+              style: GoogleFonts.sen(
+                fontWeight: FontWeight.w700,
+                fontSize: 16.sp,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

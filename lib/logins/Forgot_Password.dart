@@ -109,7 +109,7 @@ class _forgotPasswordState extends State<forgotPassword> {
                               color: Color(0xff32343E),
                             ),
                           ),
-                          AppSearchField(hintText: 'example@gmail.com'),
+                          AppSearchField(hintText: 'example@gmail.com', color: Color(0xffF0F5FA),),
 
                           Padding(
                             padding: EdgeInsets.only(

@@ -111,7 +111,7 @@ class _signInState extends State<signUp> {
                           color: Color(0xff32343E),
                         ),
                       ),
-                      AppSearchField(hintText: 'John Doe'),
+                      AppSearchField(hintText: 'John Doe', color: Color(0xffF0F5FA),),
                       Padding(
                         padding: EdgeInsets.only(top: 24.h, left: 24.w),
                         child: AppText(
@@ -123,7 +123,7 @@ class _signInState extends State<signUp> {
                         ),
                       ),
                       AppSearchField(
-                        hintText: 'example@gmail.com',
+                        hintText: 'example@gmail.com', color: Color(0xffF0F5FA),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 24.h, left: 24.w),
@@ -137,7 +137,7 @@ class _signInState extends State<signUp> {
                       ),
                       AppSearchField(
                         hintText: '* * * * * * * * *',
-                        suffixIcon: Icons.remove_red_eye_outlined,
+                        suffixIcon: Icons.remove_red_eye_outlined, color: Color(0xffF0F5FA),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 24.h, left: 24.w),
@@ -151,7 +151,7 @@ class _signInState extends State<signUp> {
                       ),
                       AppSearchField(
                         hintText: '* * * * * * * * *',
-                        suffixIcon: Icons.remove_red_eye_outlined,
+                        suffixIcon: Icons.remove_red_eye_outlined, color: Color(0xffF0F5FA),
                       ),
 
                       Padding(
