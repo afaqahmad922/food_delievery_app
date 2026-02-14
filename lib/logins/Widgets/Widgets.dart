@@ -357,3 +357,149 @@ class RestaurantCard extends StatelessWidget {
     );
   }
 }
+
+
+class FoodCard extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String price;
+
+  const FoodCard({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.price,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.r),
+        color: const Color(0xffFFFFFF),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.12),
+            blurRadius: 10,
+            spreadRadius: 0,
+            offset: const Offset(0, 8),
+          )
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 13.w, right: 12.w),
+            child: Container(
+              height: 104.h,
+              width: 122.w,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15.r),
+                color: const Color(0xff98A8B8),
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(left: 12.w, top: 5.76.h),
+            child: AppText(
+              text: title,
+              font: GoogleFonts.sen,
+              fontWeight: FontWeight.w700,
+              fontSize: 18.sp,
+              color: const Color(0xff32343E),
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(left: 12.w, top: 7.24.h, right: 15.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppText(
+                  text: subtitle,
+                  font: GoogleFonts.sen,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14.sp,
+                  color: const Color(0xff646982),
+                ),
+                SizedBox(width: 25.w,),
+                AppText(
+                  text: '\$$price',
+                  font: GoogleFonts.sen,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 18.sp,
+                  color: const Color(0xff32343E),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CategoryItem extends StatelessWidget {
+  final String text;   // 👈 ONLY this is editable
+
+  const CategoryItem({
+    super.key,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24.r),
+                color: const Color(0xffFFFFFF),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.12),
+                    blurRadius: 20,
+                    spreadRadius: 0,
+                    offset: const Offset(1, 12),
+                  )
+                ],
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: 20.h,
+                  bottom: 21.h,
+                  left: 13.w,
+                  right: 13.w,
+                ),
+                child: Container(
+                  height: 81.h,
+                  width: 96.w,
+                  decoration: BoxDecoration(
+                    color: const Color(0xff98A8B8),
+                    borderRadius: BorderRadius.circular(15.r),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 14.h),
+              child: AppText(
+                text: text,   // 👈 changed here
+                font: GoogleFonts.sen,
+                fontWeight: FontWeight.w700,
+                fontSize: 18.sp,
+                color: const Color(0xff32343E),
+              ),
+            ),
+          ],
+        )
+      ],
+    );
+  }
+}
+
+
