@@ -503,3 +503,184 @@ class CategoryItem extends StatelessWidget {
 }
 
 
+class CategoryChip extends StatelessWidget {
+  final String text;
+
+  const CategoryChip({
+    super.key,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xffFFFFFF),
+        borderRadius: BorderRadius.circular(33.r),
+        border: Border.all(
+          color: const Color(0xffEDEDED),
+          width: 2.w,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(
+          left: 20,
+          right: 20,
+          top: 14,
+          bottom: 13,
+        ),
+        child: AppText(
+          text: text,   // 👈 Dynamic text here
+          font: GoogleFonts.sen,
+          fontWeight: FontWeight.w400,
+          fontSize: 16.sp,
+          color: Colors.black,
+        ),
+      ),
+    );
+  }
+}
+
+class RestaurantRow extends StatelessWidget {
+  final String title;
+  final String rating;
+
+  const RestaurantRow({
+    Key? key,
+    required this.title,
+    required this.rating,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 24.w,),
+          child: Container(
+            height: 50.h,
+            width: 60.w,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.r),
+              color: const Color(0xff98A8B8),
+            ),
+          ),
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only( left: 10.w),
+              child: Text(
+                title,
+                style: GoogleFonts.sen(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16.sp,
+                  color: const Color(0xff000000),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 8.w, top: 4.h),
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.star_border_purple500_outlined,
+                    color: Color(0xffFF7622),
+                  ),
+                  SizedBox(width: 4.w,),
+                  Text(
+                    rating,
+                    style: GoogleFonts.sen(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16.sp,
+                      color: const Color(0xff181C2E),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class FoodCard1 extends StatelessWidget {
+  final String title;
+  final String subtitle;
+
+  const FoodCard1({
+    super.key,
+    required this.title,
+    required this.subtitle,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.r),
+        color: const Color(0xffFFFFFF),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.12),
+            blurRadius: 10,
+            spreadRadius: 0,
+            offset: const Offset(0, 8),
+          )
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 13.w, right: 12.w),
+            child: Container(
+              height: 84.h,
+              width: 122.w,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15.r),
+                color: const Color(0xff98A8B8),
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(left: 12.w, top: 5.76.h),
+            child: AppText(
+              text: title,
+              font: GoogleFonts.sen,
+              fontWeight: FontWeight.w700,
+              fontSize: 15.sp,
+              color: const Color(0xff32343E),
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(left: 12.w, top: 4.h, bottom: 15.h, right: 2.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppText(
+                  text: subtitle,
+                  font: GoogleFonts.sen,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 13.sp,
+                  color: const Color(0xff646982),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
