@@ -684,3 +684,112 @@ class FoodCard1 extends StatelessWidget {
 
 
 
+class FoodCard2 extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String price;
+
+  const FoodCard2({
+    Key? key,
+    required this.title,
+    required this.subtitle,
+    required this.price,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.r),
+        color: const Color(0xffFFFFFF),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.12),
+            blurRadius: 10,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 13.w, right: 12.w),
+            child: Container(
+              height: 84.h,
+              width: 122.w,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15.r),
+                color: const Color(0xff98A8B8),
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(left: 12.w, top: 15.h),
+            child: Text(
+              title,
+              style: GoogleFonts.sen(
+                fontWeight: FontWeight.w700,
+                fontSize: 15.sp,
+                color: const Color(0xff32343E),
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(left: 12.w, top: 8.h),
+            child: Text(
+              subtitle,
+              style: GoogleFonts.sen(
+                fontWeight: FontWeight.w400,
+                fontSize: 13.sp,
+                color: const Color(0xff32343E),
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(
+              left: 12.w,
+              top: 8.h,
+              bottom: 15.h,
+            ),
+            child: Row(
+              children: [
+                Text(
+                  price,
+                  style: GoogleFonts.sen(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16.sp,
+                    color: const Color(0xff646982),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 2.h, left: 70.w, right: 10.w),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xffF58D1D),
+                      shape: BoxShape.circle,
+                    ),
+                    padding: const EdgeInsets.all(8),
+                    child: const Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+
+
