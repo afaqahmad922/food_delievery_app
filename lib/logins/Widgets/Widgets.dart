@@ -505,17 +505,21 @@ class CategoryItem extends StatelessWidget {
 
 class CategoryChip extends StatelessWidget {
   final String text;
+  final Color? backgroundColor;
+  final Color? textColor;
 
   const CategoryChip({
     super.key,
     required this.text,
+    this.backgroundColor,
+    this.textColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xffFFFFFF),
+        color: backgroundColor ?? const Color(0xffFFFFFF),
         borderRadius: BorderRadius.circular(33.r),
         border: Border.all(
           color: const Color(0xffEDEDED),
@@ -530,16 +534,17 @@ class CategoryChip extends StatelessWidget {
           bottom: 13,
         ),
         child: AppText(
-          text: text,   // 👈 Dynamic text here
+          text: text,
           font: GoogleFonts.sen,
           fontWeight: FontWeight.w400,
           fontSize: 16.sp,
-          color: Colors.black,
+          color: textColor ?? Colors.black,
         ),
       ),
     );
   }
 }
+
 
 class RestaurantRow extends StatelessWidget {
   final String title;
@@ -788,6 +793,70 @@ class FoodCard2 extends StatelessWidget {
     );
   }
 }
+
+
+class CircleLabel extends StatelessWidget {
+  final String text;
+  final Color backgroundColor;
+  final Color textColor;
+
+  const CircleLabel({
+    Key? key,
+    required this.text,
+    required this.backgroundColor,
+    required this.textColor,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: backgroundColor,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Text(
+          text,
+          style: GoogleFonts.sen(
+            fontWeight: FontWeight.w400,
+            fontSize: 16.sp,
+            color: textColor,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+class CircleIconImage extends StatelessWidget {
+  final String imagePath;
+
+  const CircleIconImage({
+    Key? key,
+    required this.imagePath,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        color: Color(0xffFFEBE4),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(13.0),
+        child: Image.asset(
+          imagePath,
+          fit: BoxFit.contain,
+        ),
+      ),
+    );
+  }
+}
+
+
 
 
 

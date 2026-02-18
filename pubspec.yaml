@@ -68,6 +68,11 @@ flutter:
     - assets/apple.png
     - assets/twitter.png
     - assets/fbook.png
+    - assets/chilli.png
+    - assets/garlic.png
+    - assets/onion.png
+    - assets/pepper.png
+    - assets/salt.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
