@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/App_Pages/Food%20Details_02.dart';
 import 'package:figma_to_flutter_2/App_Pages/Food_Details_01.dart';
 import 'package:figma_to_flutter_2/App_Pages/Restaurant_View_01.dart';
 import 'package:figma_to_flutter_2/App_Pages/Search_Page.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: resturant_View_01(),
+        home: food_Details_02(),
       ),
     );
   }
