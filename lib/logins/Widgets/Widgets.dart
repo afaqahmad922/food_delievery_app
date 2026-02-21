@@ -883,7 +883,115 @@ class SliderDot extends StatelessWidget {
 }
 
 
+class CustomTag extends StatelessWidget {
+  final String text;
 
+  const CustomTag({
+    super.key,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(33.r),
+        border: Border.all(
+          color: const Color(0xffEDEDED),
+          width: 2.w,
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: 15.w,
+          right: 15.w,
+          top: 12.h,
+          bottom: 11.h,
+        ),
+        child: AppText(
+          text: text,
+          font: GoogleFonts.sen,
+          fontWeight: FontWeight.w400,
+          fontSize: 16.sp,
+          color: const Color(0xff464E57),
+        ),
+      ),
+    );
+  }
+}
+
+
+class CircularTextButton extends StatelessWidget {
+  final String text;
+  final Color? textColor;
+  final Color? backgroundColor;
+  final Color? borderColor;
+  final double? padding;
+
+  const CircularTextButton({
+    super.key,
+    required this.text,
+    this.textColor,
+    this.backgroundColor,
+    this.borderColor,
+    this.padding,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: backgroundColor ?? Colors.transparent,
+        border: Border.all(
+          color: borderColor ?? const Color(0xffEDEDED),
+          width: 2.w,
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(padding ?? 17.w),
+        child: AppText(
+          text: text,
+          font: GoogleFonts.sen,
+          fontWeight: FontWeight.w400,
+          fontSize: 13.sp,
+          color: textColor ?? const Color(0xff32343E),
+        ),
+      ),
+    );
+  }
+}
+
+
+class CircularStarIcon extends StatelessWidget {
+  final Color starColor;
+
+  const CircularStarIcon({
+    super.key,
+    required this.starColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: const Color(0xffEDEDED),
+          width: 2.w,
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(14.w),
+        child: Icon(
+          Icons.star,
+          color: starColor,
+          size: 18.sp,
+        ),
+      ),
+    );
+  }
+}
 
 
 

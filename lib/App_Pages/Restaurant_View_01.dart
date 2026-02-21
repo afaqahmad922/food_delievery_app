@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/App_Pages/Filter%20Card/filter_Card.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,14 +40,29 @@ class _resturant_View_01State extends State<resturant_View_01> {
                     child: AppText(text: 'Details', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 17.sp, color: Colors.black),
                   ),
                   Spacer(),
-                  Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xffECF0F4),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 20.h, left: 17.w, right: 18.w, bottom: 20.h),
-                      child: Icon(Icons.menu, size: 15,),
+                  GestureDetector(
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Center(
+                            child: Material(
+                              color: Colors.transparent,
+                              child: FilterCard(),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xffECF0F4),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 20.h, left: 17.w, right: 18.w, bottom: 20.h),
+                        child: Icon(Icons.menu, size: 15,),
+                      ),
                     ),
                   ),
                 ],

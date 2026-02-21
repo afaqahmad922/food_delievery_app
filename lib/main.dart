@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: resturant_View_02(),
+        home: resturant_View_01(),
       ),
     );
   }
