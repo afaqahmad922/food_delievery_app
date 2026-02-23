@@ -994,5 +994,248 @@ class CircularStarIcon extends StatelessWidget {
 }
 
 
+class FoodItemCard extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String price;
+  final String size;
+  final String quantity;
+
+  const FoodItemCard({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.price,
+    required this.size,
+    required this.quantity,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          height: 117,
+          width: 136,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25.r),
+            color: Color(0xffFFFFF),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 24.w, left: 20.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AppText(
+                text: '$title\n$subtitle',
+                font: GoogleFonts.sen,
+                fontWeight: FontWeight.w400,
+                fontSize: 18.sp,
+                color: Color(0xffFFFFFF),
+              ),
+              AppText(
+                text: price,
+                font: GoogleFonts.sen,
+                fontWeight: FontWeight.w700,
+                fontSize: 20.sp,
+                color: Color(0xffFFFFFF),
+              ),
+              Row(
+                children: [
+                  AppText(
+                    text: size,
+                    font: GoogleFonts.sen,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18.sp,
+                    color: Color(0xffFFFFFF),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 30.w),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xffFFFFF),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.exposure_minus_1,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 18.w, right: 18.w),
+                    child: AppText(
+                      text: quantity,
+                      font: GoogleFonts.sen,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16.sp,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color(0xffFFFFF),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.plus_one,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+class FoodItemCard2 extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final String price;
+  final String size;
+  final String quantity;
+
+  const FoodItemCard2({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.price,
+    required this.size,
+    required this.quantity,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          height: 117,
+          width: 136,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25.r),
+            color: Color(0xffFFFFF),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 24.w, left: 20.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  AppText(
+                    text: title,
+                    font: GoogleFonts.sen,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18.sp,
+                    color: Color(0xffFFFFFF),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 18.w),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xffE04444)
+                      ),
+                      child: Icon(Icons.cancel_outlined, color: Colors.white,),
+                    ),
+                  ),
+                ],
+              ),
+              AppText(
+                text: subtitle,
+                font: GoogleFonts.sen,
+                fontWeight: FontWeight.w400,
+                fontSize: 18.sp,
+                color: Color(0xffFFFFFF),
+              ),
+              AppText(
+                text: price,
+                font: GoogleFonts.sen,
+                fontWeight: FontWeight.w700,
+                fontSize: 20.sp,
+                color: Color(0xffFFFFFF),
+              ),
+              Row(
+                children: [
+                  AppText(
+                    text: size,
+                    font: GoogleFonts.sen,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18.sp,
+                    color: Color(0xffFFFFFF),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 30.w),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xffFFFFF),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.exposure_minus_1,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 18.w, right: 18.w),
+                    child: AppText(
+                      text: quantity,
+                      font: GoogleFonts.sen,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16.sp,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color(0xffFFFFF),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.plus_one,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
 
 

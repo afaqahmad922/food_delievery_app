@@ -3,6 +3,8 @@ import 'package:figma_to_flutter_2/App_Pages/Food_Details_01.dart';
 import 'package:figma_to_flutter_2/App_Pages/Restaurant%20View_02.dart';
 import 'package:figma_to_flutter_2/App_Pages/Restaurant_View_01.dart';
 import 'package:figma_to_flutter_2/App_Pages/Search_Page.dart';
+import 'package:figma_to_flutter_2/App_Pages/cart_Pages/edit_Cart.dart';
+import 'package:figma_to_flutter_2/App_Pages/cart_Pages/my_Cart.dart';
 import 'package:figma_to_flutter_2/App_Pages/food_Burgers.dart';
 import 'package:figma_to_flutter_2/Homes/Home%20V.1.dart';
 import 'package:figma_to_flutter_2/Homes/Home%20V.2.dart';
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: resturant_View_01(),
+        home: my_Cart(),
       ),
     );
   }
