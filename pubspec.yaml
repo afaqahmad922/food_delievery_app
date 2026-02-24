@@ -73,6 +73,13 @@ flutter:
     - assets/onion.png
     - assets/pepper.png
     - assets/salt.png
+    - assets/cash.png
+    - assets/visa.png
+    - assets/mastercard.png
+    - assets/paypal.png
+    - assets/42.png
+    - assets/card.png
+    - assets/Capture.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

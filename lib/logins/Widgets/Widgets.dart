@@ -1238,4 +1238,43 @@ class FoodItemCard2 extends StatelessWidget {
 
 
 
+class PaymentOptionItem extends StatelessWidget {
+  final String imagePath;
+  final String text;
+
+  const PaymentOptionItem({
+    super.key,
+    required this.imagePath,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          height: 72.h,
+          width: 85.w,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(9.62.r),
+            color: Color(0xffF0F5FA),
+          ),
+          child: Center(
+            child: Image.asset(imagePath),
+          ),
+        ),
+        AppText(
+          text: text,
+          font: GoogleFonts.sen,
+          fontWeight: FontWeight.w400,
+          fontSize: 14.sp,
+          color: Color(0xff464E57),
+        ),
+      ],
+    );
+  }
+}
+
+
+
 

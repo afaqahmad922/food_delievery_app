@@ -100,7 +100,7 @@ class _my_CartState extends State<my_Cart> {
                 Padding(
                   padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 30.h, bottom: 32.h),
                   child: SignButton(text: 'Place Order'),
-                )
+                ),
               ],
             ),
           ),
