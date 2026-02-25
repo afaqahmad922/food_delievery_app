@@ -73,7 +73,7 @@ class SignButton extends StatelessWidget {
             font: GoogleFonts.sen,
             fontWeight: FontWeight.w700,
             fontSize: 14,
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
       ),
@@ -1275,6 +1275,59 @@ class PaymentOptionItem extends StatelessWidget {
   }
 }
 
+
+
+class AppTextField extends StatelessWidget {
+  final String hintText;
+
+  const AppTextField({
+    super.key,
+    required this.hintText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 150.w,
+      height: 62.h,
+      child: TextField(
+        style: GoogleFonts.sen(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w400,
+          height: 1.0,
+          letterSpacing: 0,
+          color: Colors.black,
+        ),
+        decoration: InputDecoration(
+          hintText: hintText,
+          hintStyle: GoogleFonts.sen(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w400,
+            color: Colors.black.withOpacity(0.5),
+          ),
+          filled: true,
+          fillColor: const Color(0xffF0F5FA),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+            vertical: 20.h,
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.r),
+            borderSide: BorderSide.none,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.r),
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.r),
+            borderSide: BorderSide.none,
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 
 

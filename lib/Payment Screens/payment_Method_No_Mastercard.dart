@@ -183,7 +183,7 @@ class _payment_MastercardState extends State<payment_Mastercard> {
             Padding(
               padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 28.h, bottom: 30.h),
               child: SignButton(text: 'Place Order'),
-            )
+            ),
           ],
         ),
       ),
