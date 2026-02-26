@@ -9,11 +9,14 @@ import 'package:figma_to_flutter_2/App_Pages/food_Burgers.dart';
 import 'package:figma_to_flutter_2/Homes/Home%20V.1.dart';
 import 'package:figma_to_flutter_2/Homes/Home%20V.2.dart';
 import 'package:figma_to_flutter_2/Homes/Home%20V.3.dart';
+import 'package:figma_to_flutter_2/On_Boarding/onBoarding.dart';
 import 'package:figma_to_flutter_2/Payment%20Screens/Add%20Card.dart';
 import 'package:figma_to_flutter_2/Payment%20Screens/Payment%20Method.dart';
 import 'package:figma_to_flutter_2/Payment%20Screens/Payment%20Successfull.dart';
 import 'package:figma_to_flutter_2/Payment%20Screens/payment_Method_No_Mastercard.dart';
 import 'package:figma_to_flutter_2/SplashScreen/splashScreen.dart';
+import 'package:figma_to_flutter_2/Tracking/drawer_Widget.dart';
+import 'package:figma_to_flutter_2/Tracking/tracking_Order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +28,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: payment_Successful(),
+        home: SplashScreen(),
       ),
     );
   }
