@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/App_Pages/Restaurant_View_01.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -81,12 +82,17 @@ class _food_details_01State extends State<food_details_01> {
                       bottom: 16.h,
                       right: 18.w
                     ),
-                    child: AppText(
-                      text: 'Uttora Coffe House',
-                      font: GoogleFonts.sen,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 12.sp,
-                      color: Colors.black,
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> resturant_View_01()));
+                      },
+                      child: AppText(
+                        text: 'Uttora Coffe House',
+                        font: GoogleFonts.sen,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12.sp,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ),
@@ -232,7 +238,7 @@ class _food_details_01State extends State<food_details_01> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 24.h),
-                        child: SignButton(text: 'ok'),
+                        child: SignButton(text: 'ADD TO CART'),
                       )
                     ],
                   ),

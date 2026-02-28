@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/App_Pages/Search_Page.dart';
 import 'package:flutter/material.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -78,18 +79,23 @@ class _HomeV3State extends State<HomeV3> {
             ),
             Padding(
               padding: EdgeInsets.only(top: 8.h),
-              child: AppSearchField(hintText: '🔎 Search dishes, restaurants', color: Color(0xffF6F6F6),),
-            ),
+                  child: AppSearchField(hintText: '🔎 Search dishes, restaurants', color: Color(0xffF6F6F6),)),
             Row(
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 32.h, left: 24.w),
-                  child: AppText(text: 'All Catergories', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 20.sp, color: Color(0xff32343E)),
+                  child: GestureDetector(
+                      child: AppText(text: 'All Catergories', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 20.sp, color: Color(0xff32343E))),
                 ),
                 Spacer(),
-                Padding(
-                  padding: EdgeInsets.only(top: 32.h,),
-                  child: AppText(text: 'See All', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 16.sp, color: Color(0xff32343E)),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>searchPage()));
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 32.h,),
+                    child: AppText(text: 'See All', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 16.sp, color: Color(0xff32343E)),
+                  ),
                 ),
                 Padding(padding:  EdgeInsets.only(top: 32.h, right: 24.w),
                   child: Icon(Icons.chevron_right),

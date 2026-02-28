@@ -1,3 +1,5 @@
+import 'package:figma_to_flutter_2/App_Pages/cart_Pages/edit_Cart.dart';
+import 'package:figma_to_flutter_2/Homes/Home%20V.2.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -59,7 +61,11 @@ class _HomeV1State extends State<HomeV1> {
                       shape: BoxShape.circle,
                       color: Color(0xff181C2E),
                     ),
-                    child: Icon(Icons.shopping_bag_outlined, color: Colors.white,),
+                    child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>edit_Cart()));
+                        },
+                        child: Icon(Icons.shopping_bag_outlined, color: Colors.white,)),
                   ),
                 ),
               ],
@@ -89,7 +95,11 @@ class _HomeV1State extends State<HomeV1> {
                 Spacer(),
                 Padding(
                   padding: EdgeInsets.only(top: 32.h,),
-                  child: AppText(text: 'See All', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 16.sp, color: Color(0xff32343E)),
+                  child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeV2()));
+                      },
+                      child: AppText(text: 'See All', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 16.sp, color: Color(0xff32343E))),
                 ),
                 Padding(padding:  EdgeInsets.only(top: 32.h, right: 24.w),
                   child: Icon(Icons.chevron_right),

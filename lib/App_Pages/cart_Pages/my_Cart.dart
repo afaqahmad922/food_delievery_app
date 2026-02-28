@@ -1,3 +1,5 @@
+import 'package:figma_to_flutter_2/Payment%20Screens/Payment%20Method.dart';
+import 'package:figma_to_flutter_2/Payment%20Screens/payment_Method_No_Mastercard.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -99,7 +101,11 @@ class _my_CartState extends State<my_Cart> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 30.h, bottom: 32.h),
-                  child: SignButton(text: 'Place Order'),
+                  child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>payment_Mastercard()));
+                      },
+                      child: SignButton(text: 'Place Order')),
                 ),
               ],
             ),

@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/App_Pages/cart_Pages/my_Cart.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -40,7 +41,11 @@ class _edit_CartState extends State<edit_Cart> {
                   Spacer(),
                   Padding(
                     padding: EdgeInsets.only( right: 24.w),
-                    child: AppText(text: 'EDIT ITEMS', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xffFF7622),),
+                    child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>my_Cart()));
+                        },
+                        child: AppText(text: 'EDIT ITEMS', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xffFF7622),)),
                   ),
                 ],
               ),

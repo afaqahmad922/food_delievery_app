@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/Tracking/tracking_Order.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,7 +46,11 @@ class _payment_SuccessfulState extends State<payment_Successful> {
           Spacer(),
           Padding(
             padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 28.h, bottom: 30.h),
-            child: SignButton(text: 'Place Order'),
+            child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>tracking_Order()));
+                },
+                child: SignButton(text: 'Track Order')),
           ),
         ],
       ),

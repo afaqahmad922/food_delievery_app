@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/Homes/Home%20V.3.dart';
 import 'package:flutter/material.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -89,7 +90,11 @@ class _HomeV2State extends State<HomeV2> {
                 Spacer(),
                 Padding(
                   padding: EdgeInsets.only(top: 32.h,),
-                  child: AppText(text: 'See All', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 16.sp, color: Color(0xff32343E)),
+                  child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeV3()));
+                      },
+                      child: AppText(text: 'See All', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 16.sp, color: Color(0xff32343E))),
                 ),
                 Padding(padding:  EdgeInsets.only(top: 32.h, right: 24.w),
                   child: Icon(Icons.chevron_right),

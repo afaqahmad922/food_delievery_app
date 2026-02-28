@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/App_Pages/Food_Details_01.dart';
 import 'package:flutter/material.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -113,7 +114,11 @@ class _food_BurgersState extends State<food_Burgers> {
                   children: [
                     Padding(
                         padding: EdgeInsets.only(left: 24.w, top: 24.h),
-                        child: FoodCard2(title: 'Burger Bistro', subtitle: 'Rose garden', price: '\$40')
+                        child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>food_details_01()));
+                            },
+                            child: FoodCard2(title: 'Burger Bistro', subtitle: 'Rose garden', price: '\$40'))
                     ),
                     Padding(
                         padding: EdgeInsets.only(left: 24.w, top: 24.h),

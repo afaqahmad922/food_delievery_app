@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/App_Pages/food_Burgers.dart';
 import 'package:flutter/material.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -69,7 +70,11 @@ class _searchPageState extends State<searchPage> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: 24.w),
-                      child: CategoryChip(text: 'Burger'),
+                      child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>food_Burgers()));
+                          },
+                          child: CategoryChip(text: 'Burger')),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 10.w),

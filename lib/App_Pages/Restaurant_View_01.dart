@@ -1,4 +1,6 @@
 import 'package:figma_to_flutter_2/App_Pages/Filter%20Card/filter_Card.dart';
+import 'package:figma_to_flutter_2/App_Pages/Food%20Details_02.dart';
+import 'package:figma_to_flutter_2/App_Pages/Restaurant%20View_02.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -81,7 +83,11 @@ class _resturant_View_01State extends State<resturant_View_01> {
             ),
             Padding(
               padding: EdgeInsets.only(top: 24.h, left: 24.w),
-              child: AppText(text: 'Spicy restaurant', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 20.sp, color: Color(0xff181C2E)),
+              child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>resturant_View_02()));
+                  },
+                  child: AppText(text: 'Spicy restaurant', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 20.sp, color: Color(0xff181C2E))),
             ),
             Padding(
               padding: EdgeInsets.only(top: 4.h, left: 24.w),
@@ -141,7 +147,11 @@ class _resturant_View_01State extends State<resturant_View_01> {
                 children: [
                   Padding(
                       padding: EdgeInsets.only(left: 24.w, top: 24.h),
-                      child: FoodCard2(title: 'Burger Bistro', subtitle: 'Rose garden', price: '\$40')
+                      child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>food_Details_02()));
+                          },
+                          child: FoodCard2(title: 'Burger Bistro', subtitle: 'Rose garden', price: '\$40'))
                   ),
                   Padding(
                       padding: EdgeInsets.only(left: 24.w, top: 24.h),

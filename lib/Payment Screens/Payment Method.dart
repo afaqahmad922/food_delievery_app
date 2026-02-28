@@ -1,3 +1,5 @@
+import 'package:figma_to_flutter_2/Payment%20Screens/Add%20Card.dart';
+import 'package:figma_to_flutter_2/Payment%20Screens/Payment%20Successfull.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -169,7 +171,11 @@ class _payment_MethodState extends State<payment_Method> {
                 ),
                 child: Padding(
                   padding: EdgeInsets.only(top: 23.h, bottom: 23.h),
-                  child: Center(child: AppText(text: '+ Add New', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 14.sp, color: Color(0xffFF7622))),
+                  child: Center(child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>add_Card()));
+                      },
+                      child: AppText(text: '+ Add New', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 14.sp, color: Color(0xffFF7622)))),
                 ),
               ),
             ),
@@ -187,7 +193,11 @@ class _payment_MethodState extends State<payment_Method> {
             ),
             Padding(
               padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 28.h, bottom: 30.h),
-              child: SignButton(text: 'Place Order'),
+              child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>payment_Successful()));
+                  },
+                  child: SignButton(text: 'Place Order')),
             )
           ],
         ),

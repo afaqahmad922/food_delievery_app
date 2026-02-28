@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/Homes/Home%20V.1.dart';
 import 'package:figma_to_flutter_2/logins/Forgot_Password.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:figma_to_flutter_2/logins/signUp.dart';
@@ -147,7 +148,11 @@ class _signInState extends State<signIn> {
                           right: 24.w,
                           top: 29.h,
                         ),
-                        child: SignButton(text: 'LOG IN'),
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeV1()));
+                          },
+                            child: SignButton(text: 'LOG IN')),
                       ),
                       SizedBox(height: 38.w),
                       Row(
