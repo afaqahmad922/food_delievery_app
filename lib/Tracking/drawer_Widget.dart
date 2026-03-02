@@ -1,9 +1,8 @@
+import 'package:figma_to_flutter_2/Tracking/timeline_Tile.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 class BottomDrawer extends StatefulWidget {
   const BottomDrawer({super.key});
@@ -17,8 +16,8 @@ class _BottomDrawerState extends State<BottomDrawer> {
 
   @override
   Widget build(BuildContext context) {
-    double collapsedHeight = 200.h;
-    double expandedHeight = 572.h;
+    double collapsedHeight = 170.h;
+    double expandedHeight = 630.h;
 
     return Align(
       alignment: Alignment.bottomCenter,
@@ -40,12 +39,9 @@ class _BottomDrawerState extends State<BottomDrawer> {
           ],
         ),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: [
-
             SizedBox(height: 12.h),
 
-            /// 🔥 Handle
             GestureDetector(
               onTap: () {
                 setState(() {
@@ -64,58 +60,213 @@ class _BottomDrawerState extends State<BottomDrawer> {
 
             SizedBox(height: 20.h),
 
-            /// 🔹 Placeholder Container for your future code
             Expanded(
-              child: Padding(
-                padding: EdgeInsets.only(top: 29.h),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+              child: SingleChildScrollView(
+                physics: _isExpanded
+                    ? const BouncingScrollPhysics()
+                    : const NeverScrollableScrollPhysics(),
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 24.w,),
-                          child: Container(
+                    Padding(
+                      padding: EdgeInsets.only(left: 24.w),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
                             height: 53.h,
                             width: 63.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12.r),
-                              color: Color(0xff98A8B8)
+                              color: const Color(0xff98A8B8),
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 10.w),
-                            child: AppText(text: 'Uttora Coffee House', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 18.sp, color: Color(0xff181C2E)),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10.w),
-                            child: AppText(text: 'Orderd at 06 Sept, 10:00pm', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xffA0A5BA)),
-                          ),
-                          SizedBox(height: 16.h,),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10.w),
-                            child: AppText(text: '2x Burger', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xffA0A5BA)),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 10.w),
-                            child: AppText(text: '4x Sandwich', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xffA0A5BA)),
+                          SizedBox(width: 12.w),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                AppText(
+                                  text: 'Uttora Coffee House',
+                                  font: GoogleFonts.sen,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18.sp,
+                                  color: const Color(0xff181C2E),
+
+                                ),
+                                AppText(
+                                  text:
+                                  'Ordered at 06 Sept, 10:00pm',
+                                  font: GoogleFonts.sen,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14.sp,
+                                  color: const Color(0xffA0A5BA),
+                                ),
+                                SizedBox(height: 16.h),
+                                AppText(
+                                  text: '2x Burger',
+                                  font: GoogleFonts.sen,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14.sp,
+                                  color: const Color(0xffA0A5BA),
+                                ),
+                                AppText(
+                                  text: '4x Sandwich',
+                                  font: GoogleFonts.sen,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14.sp,
+                                  color: const Color(0xffA0A5BA),
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ),
+
+                    SizedBox(height: 36.h),
+
+                    /// ETA
+                    Center(
+                      child: AppText(
+                        text: '20 min',
+                        font: GoogleFonts.sen,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 30.sp,
+                        color: const Color(0xff181C2E),
+                      ),
+                    ),
+                    Center(
+                      child: AppText(
+                        text: 'ESTIMATED DELIVERY TIME',
+                        font: GoogleFonts.sen,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14.sp,
+                        color: const Color(0xffA0A5BA),
+                      ),
+                    ),
+
+                    /// 🔥 Timeline
+                    Padding(
+                      padding: EdgeInsets.only(left: 24.w),
+                      child: timeline_Tile(
+                          isFirst: true,
+                          isLast: false,
+                          isPast: true,
+                         text: 'Your order has been received',
+                          ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 24.w),
+                      child: timeline_Tile(
+                          isFirst: false,
+                          isLast: false,
+                          isPast: true,
+                        text: 'The restaurant is preparing your food',
+                          ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 24.w),
+                      child: timeline_Tile(
+                          isFirst: false,
+                          isLast: false,
+                          isPast: false,
+                        text: 'Your order has been picked up for delivery',
+                      ),
+                    ),
+
+                    Padding(
+                      padding: EdgeInsets.only(left: 24.w),
+                      child: timeline_Tile(
+                          isFirst: false,
+                          isLast: true,
+                          isPast: false,
+                        text: 'Order arriving soon!',
+                      ),
+                    ),
+
+                    SizedBox(height: 20.h),
+                    Container(
+                      height: 116.h,
+                      width: 380.w,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: const Color(0xffEDEDED),
+                          width: 2.w,
+                        ),
+                        color: Color(0xffFFFFFF),
+                        borderRadius: BorderRadius.only(topRight: Radius.circular(10.r), topLeft: Radius.circular(10.r)
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 34.w, top: 30.h),
+                                child: Container(
+                                  height: 54.h,
+                                  width: 54.w,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.asset('assets/Profile.png', fit: BoxFit.cover,),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 11.w, top: 32.h),
+                                child: Padding(
+                                  padding: EdgeInsets.only(right: 35.w),
+                                  child: Row(
+                                    children: [
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          AppText(text: 'Robert F.', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 20.sp, color: Color(0xff181C2E)),
+                                          AppText(text: 'Courier', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xffA0A5BA)),
+                                        ],
+                                      ),
+                                      SizedBox(width: 30.w,),
+                                      Container(
+                                        height: 45.h,
+                                        width: 45.w,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Color(0xffFF7622),
+                                        ),
+                                        child: Center(child: Icon(Icons.phone, color: Colors.white,)),
+                                      ),
+                                      SizedBox(width: 11.w,),
+                                      Container(
+                                        height: 45.h,
+                                        width: 45.w,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: const Color(0xffFF7622),
+                                            width: 2.w,
+                                          ),
+                                          shape: BoxShape.circle,
+                                          color: Colors.white,
+                                        ),
+                                        child: Center(child: Icon(Icons.message, color: Colors.orange,)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
-            )
+            ),
+            
           ],
         ),
       ),

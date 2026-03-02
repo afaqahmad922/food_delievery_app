@@ -60,10 +60,7 @@ class _food_details_01State extends State<food_details_01> {
                           shape: BoxShape.circle,
                           color: Color(0xff98A8A1),
                         ),
-                          child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Icon(Icons.favorite_outline, size: 15, color: Colors.white,),
-                      )),
+                          child: Icon(Icons.favorite_outline, size: 15, color: Colors.white,)),
                     ),
                   ),
                 ),

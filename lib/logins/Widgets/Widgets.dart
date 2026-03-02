@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppSearchField extends StatelessWidget {
   final String hintText;
@@ -1325,6 +1326,25 @@ class AppTextField extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+
+class stepperText extends StatelessWidget {
+  final bool isPast;
+  final String text;
+  const stepperText ({
+    super.key,
+    required this.isPast,
+    required this.text,
+});
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Padding(
+      padding: EdgeInsets.only(left: 24.w),
+      child: Text(text, style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w400, color: isPast? Color(0xffFF7622) : Color(0xffA0A5BA)),),
     );
   }
 }

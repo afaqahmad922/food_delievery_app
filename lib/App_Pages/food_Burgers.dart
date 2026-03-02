@@ -113,7 +113,7 @@ class _food_BurgersState extends State<food_Burgers> {
                 child: Row(
                   children: [
                     Padding(
-                        padding: EdgeInsets.only(left: 24.w, top: 24.h),
+                        padding: EdgeInsets.only(left: 24.w, top: 24.h, bottom: 12.h),
                         child: GestureDetector(
                             onTap: (){
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>food_details_01()));
@@ -132,11 +132,11 @@ class _food_BurgersState extends State<food_Burgers> {
                 child: Row(
                   children: [
                     Padding(
-                        padding: EdgeInsets.only(left: 24.w, top: 24.h),
+                        padding: EdgeInsets.only(left: 24.w, top: 12.h),
                         child: FoodCard2(title: 'Burger Bistro', subtitle: 'Rose garden', price: '\$40')
                     ),
                     Padding(
-                        padding: EdgeInsets.only(left: 24.w, top: 24.h),
+                        padding: EdgeInsets.only(left: 24.w, top: 24.h, bottom: 12.h),
                         child: FoodCard2(title: 'Burger Bistro', subtitle: 'Rose garden', price: '\$40')
                     ),
                   ],
@@ -145,7 +145,7 @@ class _food_BurgersState extends State<food_Burgers> {
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 32.h, left: 24.w),
+                    padding: EdgeInsets.only(top: 20.h, left: 24.w),
                     child: AppText(text: 'Open Resturants', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 20.sp, color: Color(0xff32343E)),
                   ),
                 ],
