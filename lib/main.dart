@@ -15,6 +15,7 @@ import 'package:figma_to_flutter_2/Payment%20Screens/Payment%20Method.dart';
 import 'package:figma_to_flutter_2/Payment%20Screens/Payment%20Successfull.dart';
 import 'package:figma_to_flutter_2/Payment%20Screens/payment_Method_No_Mastercard.dart';
 import 'package:figma_to_flutter_2/SplashScreen/splashScreen.dart';
+import 'package:figma_to_flutter_2/Tracking/Call%20Screen.dart';
 import 'package:figma_to_flutter_2/Tracking/drawer_Widget.dart';
 import 'package:figma_to_flutter_2/Tracking/tracking_Order.dart';
 import 'package:figma_to_flutter_2/logins/singIn.dart';
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: SplashScreen(),
+        home: tracking_Order(),
       ),
     );
   }

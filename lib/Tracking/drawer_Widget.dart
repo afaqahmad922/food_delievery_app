@@ -1,3 +1,5 @@
+import 'package:figma_to_flutter_2/Tracking/Call%20Screen.dart';
+import 'package:figma_to_flutter_2/Tracking/Message%20Screen.dart';
 import 'package:figma_to_flutter_2/Tracking/timeline_Tile.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
@@ -230,28 +232,38 @@ class _BottomDrawerState extends State<BottomDrawer> {
                                         ],
                                       ),
                                       SizedBox(width: 30.w,),
-                                      Container(
-                                        height: 45.h,
-                                        width: 45.w,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Color(0xffFF7622),
+                                      GestureDetector(
+                                        onTap: (){
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>call_Screen()));
+                                        },
+                                        child: Container(
+                                          height: 45.h,
+                                          width: 45.w,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Color(0xffFF7622),
+                                          ),
+                                          child: Center(child: Icon(Icons.phone, color: Colors.white,)),
                                         ),
-                                        child: Center(child: Icon(Icons.phone, color: Colors.white,)),
                                       ),
                                       SizedBox(width: 11.w,),
-                                      Container(
-                                        height: 45.h,
-                                        width: 45.w,
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: const Color(0xffFF7622),
-                                            width: 2.w,
+                                      GestureDetector(
+                                        onTap: (){
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>message_Screen()));
+                                        },
+                                        child: Container(
+                                          height: 45.h,
+                                          width: 45.w,
+                                          decoration: BoxDecoration(
+                                            border: Border.all(
+                                              color: const Color(0xffFF7622),
+                                              width: 2.w,
+                                            ),
+                                            shape: BoxShape.circle,
+                                            color: Colors.white,
                                           ),
-                                          shape: BoxShape.circle,
-                                          color: Colors.white,
+                                          child: Center(child: Icon(Icons.message, color: Colors.orange,)),
                                         ),
-                                        child: Center(child: Icon(Icons.message, color: Colors.orange,)),
                                       ),
                                     ],
                                   ),

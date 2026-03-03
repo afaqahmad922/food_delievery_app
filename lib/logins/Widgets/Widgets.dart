@@ -1350,4 +1350,111 @@ class stepperText extends StatelessWidget {
 }
 
 
+class TimeText extends StatelessWidget {
+  final String time;
+
+  const TimeText({super.key, required this.time});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 10.h),
+      child: Text(
+        time,
+        style: const TextStyle(fontSize: 12, color: Colors.grey),
+      ),
+    );
+  }
+}
+
+
+class SenderMessage extends StatelessWidget {
+  final String message;
+
+  const SenderMessage({super.key, required this.message});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 12.h),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          const Icon(Icons.done_all, size: 18, color: Color(0xffFF7A1A)),
+          SizedBox(width: 5.w),
+          Flexible(
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              decoration: BoxDecoration(
+                color: const Color(0xffFF7A1A),
+                borderRadius: BorderRadius.circular(20.r),
+              ),
+              child: Text(
+                message,
+                style: const TextStyle(color: Colors.white, fontSize: 14),
+              ),
+            ),
+          ),
+
+          SizedBox(width: 8.w),
+
+          Container(
+            height: 35.h,
+            width: 35.h,
+            decoration: const BoxDecoration(
+              color: Color(0xffF6C1A7),
+              shape: BoxShape.circle,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+class ReceiverMessage extends StatelessWidget {
+  final String message;
+
+  const ReceiverMessage({super.key, required this.message});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 12.h),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Container(
+            height: 35.h,
+            width: 35.h,
+            decoration: const BoxDecoration(
+              color: Color(0xff98A8B8),
+              shape: BoxShape.circle,
+            ),
+          ),
+
+          SizedBox(width: 8.w),
+
+          Flexible(
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              decoration: BoxDecoration(
+                color: const Color(0xffE3E7EC),
+                borderRadius: BorderRadius.circular(20.r),
+              ),
+              child: Text(
+                message,
+                style: const TextStyle(color: Colors.black87, fontSize: 14),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
 
