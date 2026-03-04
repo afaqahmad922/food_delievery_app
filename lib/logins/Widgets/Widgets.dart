@@ -1392,7 +1392,7 @@ class SenderMessage extends StatelessWidget {
               ),
               child: Text(
                 message,
-                style: const TextStyle(color: Colors.white, fontSize: 14),
+                style: const TextStyle(color: Colors.white, fontSize: 14,),
               ),
             ),
           ),
@@ -1452,6 +1452,163 @@ class ReceiverMessage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+
+class OrderCard extends StatelessWidget {
+  final String name;
+  final String orderNo;
+  final String price;
+  final String items;
+
+  const OrderCard({
+    super.key,
+    required this.name,
+    required this.orderNo,
+    required this.price,
+    required this.items,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+
+        /// Top Section
+        Padding(
+          padding: EdgeInsets.only(left: 24.w, top: 16.h, right: 24.w),
+          child: Row(
+            children: [
+              Container(
+                height: 60.h,
+                width: 60.w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.r),
+                  color: const Color(0xff98A8B8),
+                ),
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(left: 16.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    /// Name & Order No
+                    Row(
+                      children: [
+                        AppText(
+                          text: name,
+                          font: GoogleFonts.sen,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14.sp,
+                          color: const Color(0xff181C2E),
+                        ),
+                        SizedBox(width: 100.w),
+                        AppText(
+                          text: orderNo,
+                          font: GoogleFonts.sen,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.sp,
+                          color: const Color(0xff6B6E82),
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(height: 10.h),
+
+                    /// Price & Items
+                    Row(
+                      children: [
+                        AppText(
+                          text: price,
+                          font: GoogleFonts.sen,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14.sp,
+                          color: const Color(0xff181C2E),
+                        ),
+                        SizedBox(width: 14.w),
+                        AppText(
+                          text: '|',
+                          font: GoogleFonts.sen,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14.sp,
+                          color: const Color(0xffCACCDA),
+                        ),
+                        SizedBox(width: 14.w),
+                        AppText(
+                          text: items,
+                          font: GoogleFonts.sen,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12.sp,
+                          color: const Color(0xff6B6E82),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+
+        ///  Buttons Section
+        Padding(
+          padding: EdgeInsets.only(
+              left: 24.w, top: 24.h, right: 24.w,),
+          child: Row(
+            children: [
+
+              /// Track Order Button
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.r),
+                  color: const Color(0xffFF7622),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 35.w, vertical: 12.h),
+                  child: AppText(
+                    text: 'Track Order',
+                    font: GoogleFonts.sen,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 12.sp,
+                    color: const Color(0xffFFFFFF),
+                  ),
+                ),
+              ),
+
+              const Spacer(),
+
+              /// Cancel Button
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.r),
+                  color: const Color(0xffFFFFFF),
+                  border: Border.all(
+                    color: const Color(0xffFF7622),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 50.w, vertical: 12.h),
+                  child: AppText(
+                    text: 'Cancel',
+                    font: GoogleFonts.sen,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 12.sp,
+                    color: const Color(0xffFF7622),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
