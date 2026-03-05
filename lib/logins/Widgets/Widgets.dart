@@ -1614,4 +1614,64 @@ class OrderCard extends StatelessWidget {
 }
 
 
+class ProfileOptionTile extends StatelessWidget {
+  final IconData icon;
+  final Color iconColor;
+  final String text;
+
+  const ProfileOptionTile({
+    super.key,
+    required this.icon,
+    required this.iconColor,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 20.w,),
+              child: Container(
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xffFFFFFF),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: Icon(
+                    icon,
+                    color: iconColor,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 11.h, left: 14.w),
+              child: AppText(
+                text: text,
+                font: GoogleFonts.sen,
+                fontWeight: FontWeight.w400,
+                fontSize: 16.sp,
+                color: const Color(0xff32343E),
+              ),
+            ),
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.only(top: 11.h, right: 24.w),
+              child: const Icon(
+                Icons.chevron_right,
+                color: Color(0xff747783),
+              ),
+            )
+          ],
+        )
+      ],
+    );
+  }
+}
+
+
 
