@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/Profile%20Pages/Address.dart';
 import 'package:figma_to_flutter_2/Profile%20Pages/Personal%20Profiles.dart';
 import 'package:flutter/material.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
@@ -110,9 +111,14 @@ class _menuState extends State<menu> {
                           },
                           child: ProfileOptionTile(icon: Icons.person_2_outlined, text: 'Personal Info', iconColor: Color(0xffFB6F3D),)),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 20.h, top: 16.h),
-                      child: ProfileOptionTile(icon: Icons.map_outlined, text: 'Addresses', iconColor: Color(0xff413DFB),),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>address()));
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.only(bottom: 20.h, top: 16.h),
+                        child: ProfileOptionTile(icon: Icons.map_outlined, text: 'Addresses', iconColor: Color(0xff413DFB),),
+                      ),
                     ),
                   ],
                 )

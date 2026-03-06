@@ -63,7 +63,7 @@ class SignButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.orange,
+        color: Color(0xffFF7622),
         borderRadius: BorderRadius.circular(12.r),
       ),
       child: Padding(

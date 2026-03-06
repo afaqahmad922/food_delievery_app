@@ -15,6 +15,8 @@ import 'package:figma_to_flutter_2/Payment%20Screens/Add%20Card.dart';
 import 'package:figma_to_flutter_2/Payment%20Screens/Payment%20Method.dart';
 import 'package:figma_to_flutter_2/Payment%20Screens/Payment%20Successfull.dart';
 import 'package:figma_to_flutter_2/Payment%20Screens/payment_Method_No_Mastercard.dart';
+import 'package:figma_to_flutter_2/Profile%20Pages/Address.dart';
+import 'package:figma_to_flutter_2/Profile%20Pages/Edit%20Profile.dart';
 import 'package:figma_to_flutter_2/Profile%20Pages/Personal%20Profiles.dart';
 import 'package:figma_to_flutter_2/Profile%20Pages/menu.dart';
 import 'package:figma_to_flutter_2/SplashScreen/splashScreen.dart';
@@ -44,7 +46,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: personal_Profiles(),
+        home: menu(),
       ),
     );
   }

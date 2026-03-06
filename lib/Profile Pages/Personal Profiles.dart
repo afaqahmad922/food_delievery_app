@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/Profile%20Pages/Edit%20Profile.dart';
 import 'package:figma_to_flutter_2/Profile%20Pages/menu.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class _personal_ProfilesState extends State<personal_Profiles> {
                 Padding(
                   padding: EdgeInsets.only(left: 16.w),
                   child: AppText(
-                    text: 'Profile Info',
+                    text: 'Personal Info',
                     font: GoogleFonts.sen,
                     fontWeight: FontWeight.w400,
                     fontSize: 17.sp,
@@ -53,21 +54,11 @@ class _personal_ProfilesState extends State<personal_Profiles> {
                   ),
                 ),
                 Spacer(),
-                Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color(0xffECF0F4),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      top: 20.h,
-                      left: 17.w,
-                      right: 18.w,
-                      bottom: 20.h,
-                    ),
-                    child: Icon(Icons.more_horiz, size: 15),
-                  ),
-                ),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>edit_Profile()));
+                  },
+                    child: AppText(text: 'EDIT', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xffFF7622)))
               ],
             ),
           ),
