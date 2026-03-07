@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/Profile%20Pages/Add%20New%20Address.dart';
 import 'package:flutter/material.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
@@ -151,7 +152,11 @@ class _addressState extends State<address> {
                                     children: [
                                       AppText(text: 'WORK', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xff32343E)),
                                       SizedBox(width: 130.w,),
-                                      Icon(Icons.edit_note_rounded, color: Color(0xffFB6D3A),),
+                                      GestureDetector(
+                                        onTap: (){
+                                          Navigator.push(context, MaterialPageRoute(builder: (context)=>add_New_Address()));
+                                        },
+                                          child: Icon(Icons.edit_note_rounded, color: Color(0xffFB6D3A),)),
                                       Icon(Icons.delete_forever_outlined, color: Color(0xffFB6D3A),)
                                     ],
                                   ),
@@ -166,6 +171,11 @@ class _addressState extends State<address> {
                   ],
                 )
             ),
+          ),
+          Spacer(),
+          Padding(
+            padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 28.h, bottom: 30.h),
+            child: SignButton(text: 'ADD NEW ADDRESS'),
           ),
         ],
       ),

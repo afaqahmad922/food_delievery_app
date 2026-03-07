@@ -7,12 +7,14 @@ import 'package:google_fonts/google_fonts.dart';
 class AppSearchField extends StatelessWidget {
   final String hintText;
   final IconData? suffixIcon;
+  final IconData? prefixIcon;
   final Color color;
 
   const AppSearchField({
     super.key,
     required this.hintText,
     this.suffixIcon,
+    this.prefixIcon,
     required this.color,
   });
 
@@ -24,7 +26,7 @@ class AppSearchField extends StatelessWidget {
         child: TextField(
           decoration: InputDecoration(
             hintText: hintText, hintStyle: GoogleFonts.sen(
-            fontSize: 14.sp,
+            fontSize: 12.sp,
             fontWeight: FontWeight.w400,
             color: const Color(0xffA0A5BA),
           ),
@@ -34,6 +36,8 @@ class AppSearchField extends StatelessWidget {
             suffixIcon: suffixIcon != null
                 ? Icon(suffixIcon)
                 : null,
+            prefixIcon: prefixIcon != null
+              ? Icon (prefixIcon) : null,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.r),
               borderSide: BorderSide.none,
