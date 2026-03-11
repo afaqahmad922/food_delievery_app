@@ -1679,3 +1679,132 @@ class ProfileOptionTile extends StatelessWidget {
 
 
 
+class OrderCard2 extends StatelessWidget {
+  final String name;
+  final String id;
+  final String price;
+
+  const OrderCard2({
+    super.key,
+    required this.name,
+    required this.id,
+    required this.price,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:  EdgeInsets.only(bottom: 20.h),
+      child: Container(
+        width: 327.w,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  height: 102.h,
+                  width: 102.w,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.sp),
+                    color: const Color(0xff98A8B8),
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 12.w),
+                      child: AppText(
+                        text: '#Breakfast',
+                        font: GoogleFonts.sen,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14.sp,
+                        color: const Color(0xffED7A63),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 12.w),
+                      child: AppText(
+                        text: name, // Dynamic
+                        font: GoogleFonts.sen,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14.sp,
+                        color: const Color(0xff32343E),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 12.w),
+                      child: AppText(
+                        text: 'ID: $id', // Dynamic
+                        font: GoogleFonts.sen,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14.sp,
+                        color: const Color(0xff9C9BA6),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 12.w),
+                          child: AppText(
+                            text: '\$$price', // Dynamic
+                            font: GoogleFonts.sen,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18.sp,
+                            color: const Color(0xff32343E),
+                          ),
+                        ),
+                        SizedBox(width: 35.w),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(9.r),
+                            color: const Color(0xffFF7622),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: AppText(
+                              text: 'Done',
+                              font: GoogleFonts.sen,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14.sp,
+                              color: const Color(0xffFFFFFF),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10.w),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(9.r),
+                            color: const Color(0xffFFFFFF),
+                            border: Border.all(
+                              width: 1,
+                              color: const Color(0xffFF3326),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: AppText(
+                              text: 'Cancel',
+                              font: GoogleFonts.sen,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14.sp,
+                              color: const Color(0xffFF3326),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+

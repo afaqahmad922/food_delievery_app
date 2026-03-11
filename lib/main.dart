@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/Chef%20interfaces/main_Navigation.dart';
 import 'package:figma_to_flutter_2/Chef%20interfaces/seller_Dashboard_Home.dart';
 import 'package:figma_to_flutter_2/Homes/Home%20V.1.dart';
 import 'package:figma_to_flutter_2/Homes/Home%20V.2.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: seller_Dash_Home(),
+        home: MainNavigation(),
       ),
     );
   }

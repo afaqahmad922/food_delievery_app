@@ -73,26 +73,98 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                 padding: EdgeInsets.only(left: 24.w, top: 24.h, right: 24.w),
                 child: Row(
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.r),
-                        color: Color(0xffFFFFFF),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 16.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 15.h),
-                              child: AppText(text: '20', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 50.sp, color: Color(0xff32343E)),
+                    GestureDetector(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          backgroundColor: Colors.white,
+                          isScrollControlled: true,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(30),
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 2.5.h, bottom: 18.h, right: 20.w),
-                              child: AppText(text: 'RUNNING ORDERS', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 11.sp, color: Color(0xff838799)),
-                            ),
-                          ],
+                          ),
+                          builder: (context) {
+                            return Container(
+                              height: 659.h, // drawer height
+                              padding: const EdgeInsets.only(top: 10),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Center(
+                                      child: Container(
+                                        width: 40,
+                                        height: 5,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey[400],
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(height: 20),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 24.w, top: 18.h),
+                                          child: AppText(text: '20 Running Orders', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 17.sp, color: Color(0xff181C2E)),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 24.w, top: 24.h,),
+                                          child: Column(
+                                            children: [
+                                              OrderCard2(name: 'Chicken Thai Biriyani', id: 'ID: 32053', price: '65'),
+                                              OrderCard2(name: 'Chicken Bhuna', id: 'ID: 15253', price: '30'),
+                                              OrderCard2(name: 'Vegetarian Poutine', id: 'ID: 21200', price: '35'),
+                                              OrderCard2(name: 'Turkey Bacon Strips', id: 'ID: 53241', price: '45'),
+                                              OrderCard2(name: 'Veggie Burrito.', id: 'ID: 58464', price: '50'),
+                                            ],
+                                          )
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.r),
+                          color: const Color(0xffFFFFFF),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 16.w),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(top: 15.h),
+                                child: AppText(
+                                  text: '20',
+                                  font: GoogleFonts.sen,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 50.sp,
+                                  color: const Color(0xff32343E),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(top: 2.5.h, bottom: 18.h, right: 20.w),
+                                child: AppText(
+                                  text: 'RUNNING ORDERS',
+                                  font: GoogleFonts.sen,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 11.sp,
+                                  color: const Color(0xff838799),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -228,11 +300,11 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                             ],
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),
