@@ -1807,4 +1807,121 @@ class OrderCard2 extends StatelessWidget {
 }
 
 
+class FoodCard3 extends StatelessWidget {
+  final String name;
+  final String price;
+
+  const FoodCard3({
+    super.key,
+    required this.name,
+    required this.price,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 327.w,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                width: 102.w,
+                height: 102.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.r),
+                  color: const Color(0xff98A8B8),
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 12.w),
+                      child: AppText(
+                        text: name, // 🔹 Dynamic
+                        font: GoogleFonts.sen,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16.sp,
+                        color: const Color(0xff23243E),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 12.w, top: 10.h),
+                      child: Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(29.28),
+                              color: const Color(0xffFF7622).withOpacity(0.2),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 12.w, vertical: 2.h),
+                              child: AppText(
+                                text: 'Breakfast',
+                                font: GoogleFonts.sen,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 13.677.sp,
+                                color: const Color(0xffFF7622),
+                              ),
+                            ),
+                          ),
+                          const Spacer(),
+                          AppText(
+                            text: '\$$price', // 🔹 Dynamic
+                            font: GoogleFonts.sen,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 17.49.sp,
+                            color: const Color(0xffFB6D3A),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 12.w, top: 10.h),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.star, color: Color(0xffFB6D3A)),
+                          AppText(
+                            text: '4.9',
+                            font: GoogleFonts.sen,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 13.67.sp,
+                            color: const Color(0xffFB6D3A),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 10.w),
+                            child: AppText(
+                              text: '(10 Review)',
+                              font: GoogleFonts.sen,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 13.67.sp,
+                              color: const Color(0xffAFAFAF),
+                            ),
+                          ),
+                          const Spacer(),
+                          AppText(
+                            text: 'Pick UP',
+                            font: GoogleFonts.sen,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 13.67.sp,
+                            color: const Color(0xffAFAFAF),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
 
