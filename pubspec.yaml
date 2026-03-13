@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^8.0.1
   timeline_tile:
   fl_chart:
+  dotted_border: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +85,14 @@ flutter:
     - assets/Capture.png
     - assets/track.png
     - assets/Profile.png
+    - assets/ginger.png
+    - assets/chicken.png
+    - assets/apple1.png
+    - assets/avocado.png
+    - assets/berry.png
+    - assets/brocolli.png
+    - assets/nut.png
+    - assets/orange.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -57,6 +57,71 @@ class AppSearchField extends StatelessWidget {
   }
 }
 
+class AppSearchField2 extends StatelessWidget {
+  final String hintText;
+  final IconData? suffixIcon;
+  final IconData? prefixIcon;
+  final Color color;
+
+  const AppSearchField2({
+    super.key,
+    required this.hintText,
+    this.suffixIcon,
+    this.prefixIcon,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: Padding(
+        padding: EdgeInsets.only(left: 24.w, top: 8.h, right: 24.w),
+        child: TextField(
+          decoration: InputDecoration(
+            hintText: hintText,
+            hintStyle: GoogleFonts.sen(
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w400,
+              color: const Color(0xff9C9BA6),
+            ),
+            fillColor: color,
+            filled: true,
+            contentPadding:
+            EdgeInsets.only(left: 16.w, top: 18.h, bottom: 18.h),
+
+            suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+            prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.r),
+              borderSide: BorderSide(
+                color: Color(0xffE8EAED), // ✅ Border Color
+                width: 1,
+              ),
+            ),
+
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.r),
+              borderSide: BorderSide(
+                color: Color(0xffE8EAED), // ✅ Border Color
+                width: 1,
+              ),
+            ),
+
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.r),
+              borderSide: BorderSide(
+                color: Color(0xffE8EAED), // ✅ Border Color
+                width: 1,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class SignButton extends StatelessWidget {
   final String text;
   const SignButton({super.key,
@@ -1922,6 +1987,52 @@ class FoodCard3 extends StatelessWidget {
     );
   }
 }
+
+
+class IngredientItem extends StatelessWidget {
+  final Color containerColor;
+  final String imagePath;
+  final String text;
+
+  const IngredientItem({
+    super.key,
+    required this.containerColor,
+    required this.imagePath,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Color(0xffE8EAED),
+              width: 1,
+             ),
+            color: containerColor,
+            shape: BoxShape.circle,
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 15.w, horizontal: 15.h),
+            child: Image.asset(imagePath),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 7.h),
+          child: AppText(
+            text: text,
+            font: GoogleFonts.sen,
+            fontWeight: FontWeight.w400,
+            fontSize: 11.sp,
+            color: const Color(0xff9C9BA6),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 
 
 
