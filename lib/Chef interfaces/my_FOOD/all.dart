@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/Chef%20interfaces/Chef%20Food%20Details.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +26,11 @@ class _all_FoodsState extends State<all_Foods> {
             ),
             Padding(
               padding: EdgeInsets.only(left: 24.w, top: 20.h, right: 24.w),
-              child: FoodCard3(name: 'Chicken Thai Biriyani', price: '60'),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>chef_Food_Details()));
+                },
+                  child: FoodCard3(name: 'Chicken Thai Biriyani', price: '60')),
             ),
             Padding(
               padding: EdgeInsets.only(left: 24.w, top: 20.h, right: 24.w),

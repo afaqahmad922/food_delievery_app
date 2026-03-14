@@ -2034,5 +2034,50 @@ class IngredientItem extends StatelessWidget {
 }
 
 
+class IngredientItem2 extends StatelessWidget {
+  final Color containerColor;
+  final String imagePath;
+  final String text;
+
+  const IngredientItem2({
+    super.key,
+    required this.containerColor,
+    required this.imagePath,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Color(0xffE8EAED),
+              width: 1,
+            ),
+            color: containerColor,
+            shape: BoxShape.circle,
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 15.w, horizontal: 15.h),
+            child: Image.asset(imagePath, color: Color(0xffFB6D3A),),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 7.h),
+          child: AppText(
+            text: text,
+            font: GoogleFonts.sen,
+            fontWeight: FontWeight.w400,
+            fontSize: 11.sp,
+            color: const Color(0xff9C9BA6),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
 
 
