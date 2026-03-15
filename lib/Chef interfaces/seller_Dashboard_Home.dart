@@ -1,4 +1,5 @@
 import 'package:figma_to_flutter_2/App_Pages/cart_Pages/edit_Cart.dart';
+import 'package:figma_to_flutter_2/Chef%20interfaces/Menu.dart';
 import 'package:figma_to_flutter_2/Chef%20interfaces/Revenue%20Chart.dart';
 import 'package:figma_to_flutter_2/Homes/Home%20V.2.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
@@ -28,14 +29,19 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(left: 24.w, top: 54.h),
-                    child: Container(
-                      height: 45.h,
-                      width: 45.w,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xffFFFFFF),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>menu1()));
+                      },
+                      child: Container(
+                        height: 45.h,
+                        width: 45.w,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xffFFFFFF),
+                        ),
+                        child: Icon(Icons.menu),
                       ),
-                      child: Icon(Icons.menu),
                     ),
                   ),
                   Column(
