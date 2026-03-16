@@ -18,8 +18,8 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(375, 812),
-    minTextAdapt: true,
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
       child: Scaffold(
         backgroundColor: Color(0xffF7F8F9),
         body: SingleChildScrollView(
@@ -30,8 +30,11 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                   Padding(
                     padding: EdgeInsets.only(left: 24.w, top: 54.h),
                     child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>menu1()));
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => menu1()),
+                        );
                       },
                       child: Container(
                         height: 45.h,
@@ -49,16 +52,28 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                     children: [
                       Padding(
                         padding: EdgeInsets.only(top: 59.h, left: 18.w),
-                        child: AppText(text: 'Deliver to', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 12.sp, color: Color(0xffFC6E2A)),
+                        child: AppText(
+                          text: 'Deliver to',
+                          font: GoogleFonts.sen,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 12.sp,
+                          color: Color(0xffFC6E2A),
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 3.h, left: 18.w),
-                        child: AppText(text: 'Halal Lab office', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xff676767)),
+                        child: AppText(
+                          text: 'Halal Lab office',
+                          font: GoogleFonts.sen,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.sp,
+                          color: Color(0xff676767),
+                        ),
                       ),
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 8.w,top: 81.h),
+                    padding: EdgeInsets.only(left: 8.w, top: 81.h),
                     child: Icon(Icons.arrow_drop_down),
                   ),
                   Spacer(),
@@ -104,33 +119,69 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                                         height: 5,
                                         decoration: BoxDecoration(
                                           color: Colors.grey[400],
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius: BorderRadius.circular(
+                                            10,
+                                          ),
                                         ),
                                       ),
                                     ),
                                     const SizedBox(height: 20),
                                     Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsets.only(left: 24.w, top: 18.h),
-                                          child: AppText(text: '20 Running Orders', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 17.sp, color: Color(0xff181C2E)),
+                                          padding: EdgeInsets.only(
+                                            left: 24.w,
+                                            top: 18.h,
+                                          ),
+                                          child: AppText(
+                                            text: '20 Running Orders',
+                                            font: GoogleFonts.sen,
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 17.sp,
+                                            color: Color(0xff181C2E),
+                                          ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsets.only(left: 24.w, top: 24.h,),
+                                          padding: EdgeInsets.only(
+                                            left: 24.w,
+                                            top: 24.h,
+                                          ),
                                           child: Column(
                                             children: [
-                                              OrderCard2(name: 'Chicken Thai Biriyani', id: 'ID: 32053', price: '65'),
-                                              OrderCard2(name: 'Chicken Bhuna', id: 'ID: 15253', price: '30'),
-                                              OrderCard2(name: 'Vegetarian Poutine', id: 'ID: 21200', price: '35'),
-                                              OrderCard2(name: 'Turkey Bacon Strips', id: 'ID: 53241', price: '45'),
-                                              OrderCard2(name: 'Veggie Burrito.', id: 'ID: 58464', price: '50'),
+                                              OrderCard2(
+                                                name: 'Chicken Thai Biriyani',
+                                                id: 'ID: 32053',
+                                                price: '65',
+                                              ),
+                                              OrderCard2(
+                                                name: 'Chicken Bhuna',
+                                                id: 'ID: 15253',
+                                                price: '30',
+                                              ),
+                                              OrderCard2(
+                                                name: 'Vegetarian Poutine',
+                                                id: 'ID: 21200',
+                                                price: '35',
+                                              ),
+                                              OrderCard2(
+                                                name: 'Turkey Bacon Strips',
+                                                id: 'ID: 53241',
+                                                price: '45',
+                                              ),
+                                              OrderCard2(
+                                                name: 'Veggie Burrito.',
+                                                id: 'ID: 58464',
+                                                price: '50',
+                                              ),
                                             ],
-                                          )
-                                        )
+                                          ),
+                                        ),
                                       ],
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -160,7 +211,11 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(top: 2.5.h, bottom: 18.h, right: 20.w),
+                                padding: EdgeInsets.only(
+                                  top: 2.5.h,
+                                  bottom: 18.h,
+                                  right: 20.w,
+                                ),
                                 child: AppText(
                                   text: 'RUNNING ORDERS',
                                   font: GoogleFonts.sen,
@@ -188,11 +243,27 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                           children: [
                             Padding(
                               padding: EdgeInsets.only(top: 15.h),
-                              child: AppText(text: '05', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 50.sp, color: Color(0xff32343E)),
+                              child: AppText(
+                                text: '05',
+                                font: GoogleFonts.sen,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 50.sp,
+                                color: Color(0xff32343E),
+                              ),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(top: 2.5.h, bottom: 18.h, right: 20.w),
-                              child: AppText(text: 'ORDERS REQUEST', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 11.sp, color: Color(0xff838799)),
+                              padding: EdgeInsets.only(
+                                top: 2.5.h,
+                                bottom: 18.h,
+                                right: 20.w,
+                              ),
+                              child: AppText(
+                                text: 'ORDERS REQUEST',
+                                font: GoogleFonts.sen,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 11.sp,
+                                color: Color(0xff838799),
+                              ),
                             ),
                           ],
                         ),
@@ -201,7 +272,7 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                   ],
                 ),
               ),
-                
+
               RevenueCard(),
               Padding(
                 padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 16.h),
@@ -216,31 +287,59 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                         children: [
                           Padding(
                             padding: EdgeInsets.only(left: 16.w, top: 14.h),
-                            child: AppText(text: 'Reviews', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xff32343E)),
+                            child: AppText(
+                              text: 'Reviews',
+                              font: GoogleFonts.sen,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14.sp,
+                              color: Color(0xff32343E),
+                            ),
                           ),
                           Spacer(),
                           Padding(
-                            padding: EdgeInsets.only( top: 14.h, right: 16.w),
-                            child: AppText(text: 'See All Reviews', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xffFB6D3A)),
+                            padding: EdgeInsets.only(top: 14.h, right: 16.w),
+                            child: AppText(
+                              text: 'See All Reviews',
+                              font: GoogleFonts.sen,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14.sp,
+                              color: Color(0xffFB6D3A),
+                            ),
                           ),
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsets.only( top: 23.4.h, left: 16.w, bottom: 10.h),
+                        padding: EdgeInsets.only(
+                          top: 23.4.h,
+                          left: 16.w,
+                          bottom: 10.h,
+                        ),
                         child: Row(
                           children: [
-                            Icon(Icons.star, color: Color(0xffFB6D3A),),
+                            Icon(Icons.star, color: Color(0xffFB6D3A)),
                             Padding(
                               padding: EdgeInsets.only(left: 3.3.w),
-                              child: AppText(text: '4.9', font: GoogleFonts.sen, fontWeight: FontWeight.w700, fontSize: 21.sp, color: Color(0xffFB6D3A)),
+                              child: AppText(
+                                text: '4.9',
+                                font: GoogleFonts.sen,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 21.sp,
+                                color: Color(0xffFB6D3A),
+                              ),
                             ),
                             Padding(
                               padding: EdgeInsets.only(left: 6.16.w),
-                              child: AppText(text: '20 Total Reviews', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xff32343E)),
+                              child: AppText(
+                                text: '20 Total Reviews',
+                                font: GoogleFonts.sen,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14.sp,
+                                color: Color(0xff32343E),
+                              ),
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -250,7 +349,7 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.r),
-                    color: Color(0xffFFFFFF)
+                    color: Color(0xffFFFFFF),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -260,19 +359,35 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                         children: [
                           Padding(
                             padding: EdgeInsets.only(left: 16.w, top: 14.h),
-                            child: AppText(text: 'Popular Items this Week', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xff32343E)),
+                            child: AppText(
+                              text: 'Popular Items this Week',
+                              font: GoogleFonts.sen,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14.sp,
+                              color: Color(0xff32343E),
+                            ),
                           ),
                           Spacer(),
                           Padding(
-                            padding: EdgeInsets.only( top: 14.h, right: 16.w),
-                            child: AppText(text: 'See All', font: GoogleFonts.sen, fontWeight: FontWeight.w400, fontSize: 14.sp, color: Color(0xffFB6D3A)),
+                            padding: EdgeInsets.only(top: 14.h, right: 16.w),
+                            child: AppText(
+                              text: 'See All',
+                              font: GoogleFonts.sen,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14.sp,
+                              color: Color(0xffFB6D3A),
+                            ),
                           ),
                         ],
                       ),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Padding(
-                          padding: EdgeInsets.only( top: 14.h, left: 16.w, bottom: 14.h),
+                          padding: EdgeInsets.only(
+                            top: 14.h,
+                            left: 16.w,
+                            bottom: 14.h,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,7 +400,7 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                                   color: Color(0xff98A8B8),
                                 ),
                               ),
-                              SizedBox(width: 14.w,),
+                              SizedBox(width: 14.w),
                               Container(
                                 width: 150.w,
                                 height: 153.h,
@@ -294,7 +409,7 @@ class _seller_Dash_HomeState extends State<seller_Dash_Home> {
                                   color: Color(0xff98A8B8),
                                 ),
                               ),
-                              SizedBox(width: 14.w,),
+                              SizedBox(width: 14.w),
                               Container(
                                 width: 150.w,
                                 height: 153.h,

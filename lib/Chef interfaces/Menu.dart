@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/Chef%20interfaces/Withdraw%20Successful.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -82,22 +83,27 @@ class _menuState extends State<menu1> {
                     fontSize: 40.sp,
                     color: Color(0xffFFFFFF),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.r),
-                      border: Border.all(
-                        color: Color(0xffFFFFFF),
-                        width: 2.w,
-                      )
-                    ),
-                    child:Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 18),
-                      child: AppText(
-                        text: 'Withdraw',
-                        font: GoogleFonts.sen,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14.sp,
-                        color: Color(0xffFFFFFF),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>withdraw_Success()));
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(
+                          color: Color(0xffFFFFFF),
+                          width: 2.w,
+                        )
+                      ),
+                      child:Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+                        child: AppText(
+                          text: 'Withdraw',
+                          font: GoogleFonts.sen,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.sp,
+                          color: Color(0xffFFFFFF),
+                        ),
                       ),
                     ),
                   )

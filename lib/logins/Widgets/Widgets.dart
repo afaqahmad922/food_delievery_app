@@ -2079,5 +2079,83 @@ class IngredientItem2 extends StatelessWidget {
 }
 
 
+class NotificationItem extends StatelessWidget {
+  final String nameText;
+  final String messageText;
+
+  const NotificationItem({
+    super.key,
+    required this.nameText,
+    required this.messageText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          height: 54.h,
+          width: 54.w,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: const Color(0xff98A8B8),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 14.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: nameText,
+                      style: TextStyle(
+                        color: const Color(0xff32343E),
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    TextSpan(
+                      text: messageText,
+                      style: const TextStyle(
+                        color: Color(0xff9C9BA6),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10.h),
+              AppText(
+                text: '20 min ago',
+                font: GoogleFonts.sen,
+                fontWeight: FontWeight.w400,
+                fontSize: 10.sp,
+                color: const Color(0xff9C9BA6),
+              ),
+            ],
+          ),
+        ),
+        const Spacer(),
+        Container(
+          height: 54.h,
+          width: 54.w,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.r),
+            color: const Color(0xff98A8B8),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
 
 

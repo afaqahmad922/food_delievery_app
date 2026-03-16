@@ -1,4 +1,6 @@
 import 'package:figma_to_flutter_2/Chef%20interfaces/Menu.dart';
+import 'package:figma_to_flutter_2/Chef%20interfaces/Notifications/notifications.dart';
+import 'package:figma_to_flutter_2/Chef%20interfaces/Withdraw%20Successful.dart';
 import 'package:figma_to_flutter_2/Chef%20interfaces/add_New_Items.dart';
 import 'package:figma_to_flutter_2/Chef%20interfaces/main_Navigation.dart';
 import 'package:figma_to_flutter_2/Chef%20interfaces/my_FOOD/my_Food.dart';
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: seller_Dash_Home(),
+        home: MainNavigation(),
       ),
     );
   }
