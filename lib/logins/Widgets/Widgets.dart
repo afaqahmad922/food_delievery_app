@@ -2157,5 +2157,126 @@ class NotificationItem extends StatelessWidget {
 }
 
 
+class ChatItem extends StatelessWidget {
+  final String name;
+  final String message;
+  final String time;
+
+  final bool isOnline;
+  final bool showBadge;
+  final String badgeCount;
+
+  const ChatItem({
+    super.key,
+    required this.name,
+    required this.message,
+    this.time = '19:37',
+    this.isOnline = false,
+    this.showBadge = false,
+    this.badgeCount = '1',
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Container(
+              height: 32.h,
+              width: 32.w,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color(0xff98A8B8),
+              ),
+            ),
+
+            // Online Indicator
+            if (isOnline)
+              Positioned(
+                right: 2,
+                bottom: 2,
+                child: Container(
+                  height: 8.h,
+                  width: 8.w,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: isOnline ? Colors.green : Color(0xff9C9BA6), // 🔹 key change
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 1,
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+
+        SizedBox(width: 16.w),
+
+        //  Name + Message
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            AppText(
+              text: name,
+              font: GoogleFonts.sen,
+              fontWeight: FontWeight.w400,
+              fontSize: 16.sp,
+              color: const Color(0xff32343E),
+            ),
+            AppText(
+              text: message,
+              font: GoogleFonts.sen,
+              fontWeight: FontWeight.w400,
+              fontSize: 12.sp,
+              color: const Color(0xff373738),
+            ),
+          ],
+        ),
+
+        const Spacer(),
+
+        // Time + Optional Badge
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            AppText(
+              text: time,
+              font: GoogleFonts.sen,
+              fontWeight: FontWeight.w400,
+              fontSize: 10.sp,
+              color: const Color(0xff373738),
+            ),
+
+            SizedBox(height: 5.h),
+
+            if (showBadge)
+              Container(
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xffFF7622),
+                ),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 8.w,
+                  vertical: 1.h,
+                ),
+                child: AppText(
+                  text: badgeCount,
+                  font: GoogleFonts.sen,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 12.sp,
+                  color: const Color(0xffF6F7FC),
+                ),
+              ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+
 
 
