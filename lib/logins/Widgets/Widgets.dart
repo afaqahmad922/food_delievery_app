@@ -512,7 +512,7 @@ class FoodCard extends StatelessWidget {
 }
 
 class CategoryItem extends StatelessWidget {
-  final String text;   // 👈 ONLY this is editable
+  final String text;
 
   const CategoryItem({
     super.key,
@@ -2272,6 +2272,112 @@ class ChatItem extends StatelessWidget {
               ),
           ],
         ),
+      ],
+    );
+  }
+}
+
+
+class ReviewItem extends StatelessWidget {
+  final String reviewText;
+  final String description;
+
+  const ReviewItem({
+    super.key,
+    required this.reviewText,
+    required this.description,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          height: 43.h,
+          width: 43.h,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Color(0xff98A8B8),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 10.w, right: 24.w),
+          child: Container(
+            width: 274.w,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.r),
+              color: const Color(0xffF6F8FA),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 15.w, top: 10.h),
+                      child: AppText(
+                        text: '20/12/2020',
+                        font: GoogleFonts.sen,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.sp,
+                        color: const Color(0xff9C9BA6),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 10.w, top: 10.h),
+                      child: const Icon(Icons.more_horiz),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 15.w, top: 11.h),
+                  child: AppText(
+                    text: reviewText,
+                    font: GoogleFonts.sen,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 14.sp,
+                    color: const Color(0xff32343E),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 14.w, top: 6.h),
+                  child: Row(
+                    children: const [
+                      Icon(Icons.star, color: Color(0xffFB6D3A)),
+                      SizedBox(width: 3),
+                      Icon(Icons.star, color: Color(0xffFB6D3A)),
+                      SizedBox(width: 3),
+                      Icon(Icons.star, color: Color(0xffFB6D3A)),
+                      SizedBox(width: 3),
+                      Icon(Icons.star, color: Color(0xffFB6D3A)),
+                      SizedBox(width: 3),
+                      Icon(Icons.star, color: Color(0xffFB6D3A)),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 14.w,
+                    top: 15.h,
+                    right: 11.w,
+                    bottom: 29.h,
+                  ),
+                  child: AppText(
+                    text: description,
+                    font: GoogleFonts.sen,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12.sp,
+                    color: const Color(0xff747783),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
       ],
     );
   }

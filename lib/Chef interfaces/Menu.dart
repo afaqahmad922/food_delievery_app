@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_2/Chef%20interfaces/Review%20Screen.dart';
 import 'package:figma_to_flutter_2/Chef%20interfaces/Withdraw%20Successful.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
@@ -164,7 +165,11 @@ class _menuState extends State<menu1> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(top: 15.h, bottom: 15.h),
-                      child: ProfileOptionTile(icon: Icons.rate_review_sharp, text: 'User Reviews', iconColor: Color(0xff369BFF),),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>review_Screen()));
+                        },
+                          child: ProfileOptionTile(icon: Icons.rate_review_sharp, text: 'User Reviews', iconColor: Color(0xff369BFF),)),
                     ),
                   ],
                 )
