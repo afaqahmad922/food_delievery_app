@@ -1,5 +1,6 @@
 import 'package:figma_to_flutter_2/App_Pages/cart_Pages/edit_Cart.dart';
 import 'package:figma_to_flutter_2/Homes/Home%20V.2.dart';
+import 'package:figma_to_flutter_2/Profile%20Pages/menu.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,14 +25,19 @@ class _HomeV1State extends State<HomeV1> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 24.w, top: 54.h),
-                  child: Container(
-                    height: 45.h,
-                    width: 45.w,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xffECF0F4),
+                  child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>menu()));
+                      },
+                    child: Container(
+                      height: 45.h,
+                      width: 45.w,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xffECF0F4),
+                      ),
+                      child: Icon(Icons.menu),
                     ),
-                    child: Icon(Icons.menu),
                   ),
                 ),
                 Column(

@@ -1,4 +1,5 @@
 import 'package:figma_to_flutter_2/Homes/Home%20V.3.dart';
+import 'package:figma_to_flutter_2/Orders/my_Order_01.dart';
 import 'package:flutter/material.dart';
 import 'package:figma_to_flutter_2/logins/Widgets/Widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,14 +24,19 @@ class _HomeV2State extends State<HomeV2> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(left: 24.w, top: 54.h),
-                  child: Container(
-                    height: 45.h,
-                    width: 45.w,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xffECF0F4),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>OrdersScreen()));
+                    },
+                    child: Container(
+                      height: 45.h,
+                      width: 45.w,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xffECF0F4),
+                      ),
+                      child: Icon(Icons.menu),
                     ),
-                    child: Icon(Icons.menu),
                   ),
                 ),
                 Column(

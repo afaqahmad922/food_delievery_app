@@ -175,7 +175,11 @@ class _addressState extends State<address> {
           Spacer(),
           Padding(
             padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 28.h, bottom: 30.h),
-            child: SignButton(text: 'ADD NEW ADDRESS'),
+            child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>add_New_Address()));
+                },
+                child: SignButton(text: 'ADD NEW ADDRESS')),
           ),
         ],
       ),
